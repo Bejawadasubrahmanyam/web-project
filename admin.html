@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - College Asset Management</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="assets.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <h3>All Department Assets</h3>
+        <div class="admin-controls">
+            <h4>Add Asset</h4>
+            <form class="asset-form">
+                <select id="asset-type" required>
+                    <option value="">Select Asset Type</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="stationery">Stationery</option>
+                </select>
+                <input type="text" id="asset-name" placeholder="Asset Name" required>
+                <input type="number" id="asset-qty" placeholder="Quantity" required>
+                <input type="text" id="asset-cond" placeholder="Condition" required>
+                <button type="submit">Add Asset</button>
+            </form>
+
+            <h4>Indent Request</h4>
+            <form class="indent-form">
+                <label for="indent-date">Date:</label>
+                <input type="date" id="indent-date" required>
+
+                <table id="indent-table">
+                    <thead>
+                        <tr>
+                            <th>S.no</th>
+                            <th>Particulars</th>
+                            <th>Ordered By</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- rows added dynamically -->
+                    </tbody>
+                </table>
+
+                <button type="button" id="add-indent-row">Add Row</button>
+
+                <label for="bill-no">Bill No:</label>
+                <input type="text" id="bill-no" placeholder="Bill No">
+
+                <label for="passed-by">Passed By:</label>
+                <input type="text" id="passed-by" placeholder="Passed By">
+
+                <button type="submit">Submit Indent</button>
+            </form>
+        </div>
+
+        <table id="admin-assets-table">
+            <!-- JS will render persistent asset data here -->
+        </table>
+            </tr>
+        </table>
+
+        <a href="index.html" class="logout-btn">Logout</a>
+    </div>
+</body>
+</html>

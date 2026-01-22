@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Assets - College Asset Management</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="assets.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Department Asset Management</h1>
+
+        <form class="asset-form">
+            <select id="asset-type" required>
+                <option value="">Select Asset Type</option>
+                <option value="electronics">Electronics</option>
+                <option value="furniture">Furniture</option>
+                <option value="stationery">Stationery</option>
+            </select>
+            <input type="text" id="asset-name" placeholder="Asset Name" required>
+            <input type="number" id="asset-qty" placeholder="Quantity" required>
+            <input type="text" id="asset-cond" placeholder="Condition" required>
+            <button type="submit">Add Asset</button>
+        </form>
+
+        <h3>Asset Indent Form</h3>
+        <form class="indent-form">
+            <label for="indent-date">Date:</label>
+            <input type="date" id="indent-date" required>
+
+            <table id="indent-table">
+                <thead>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Particulars</th>
+                        <th>Ordered By</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- rows added dynamically -->
+                </tbody>
+            </table>
+
+            <button type="button" id="add-indent-row">Add Row</button>
+
+            <label for="bill-no">Bill No:</label>
+            <input type="text" id="bill-no" placeholder="Bill No">
+
+            <label for="passed-by">Passed By:</label>
+            <input type="text" id="passed-by" placeholder="Passed By">
+
+            <button type="submit">Submit Indent</button>
+        </form>
+
+        <h3>Department Assets</h3>
+            <h4>Electronics</h4>
+            <table id="electronics-table">
+                <tr>
+                    <th>ID</th>
+                    <th>Asset Name</th>
+                    <th>Quantity</th>
+                    <th>Condition</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>1</td><td>Projector</td><td>2</td><td>Good</td>
+                    <td><button type="button" class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>2</td><td>Desktop PC</td><td>40</td><td>Excellent</td>
+                    <td><button type="button" class="delete-btn">Delete</button></td>
+                </tr>
+            </table>
+
+            <h4>Furniture</h4>
+            <table id="furniture-table">
+                <tr>
+                    <th>ID</th>
+                    <th>Asset Name</th>
+                    <th>Quantity</th>
+                    <th>Condition</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>1</td><td>Office Chair</td><td>20</td><td>Good</td>
+                    <td><button type="button" class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>2</td><td>Table</td><td>10</td><td>Fair</td>
+                    <td><button type="button" class="delete-btn">Delete</button></td>
+                </tr>
+            </table>
+
+            <h4>Stationery</h4>
+            <table id="stationery-table">
+                <tr>
+                    <th>ID</th>
+                    <th>Asset Name</th>
+                    <th>Quantity</th>
+                    <th>Condition</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>1</td><td>Marker</td><td>50</td><td>New</td>
+                    <td><button type="button" class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>2</td><td>Notebook</td><td>100</td><td>New</td>
+                    <td><button type="button" class="delete-btn">Delete</button></td>
+                </tr>
+            </table>
+
+        <a href="index.html" class="logout-btn">Logout</a>
+    </div>
+</body>
+</html>

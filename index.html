@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Asset Management - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>College Asset Management System</h1>
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="login-username" name="username" placeholder="Username" required>
+                <input type="password" id="login-password" name="password" placeholder="Password" required>
+
+                <label for="role">Select Department:</label>
+                <select id="login-role" name="role" required>
+                    <option value="">--Select--</option>
+                    <option value="admin">Admin</option>
+                    <option value="CSE">CSE Department</option>
+                    <option value="ECE">ECE Department</option>
+                    <option value="MECH">MECH Department</option>
+                    <option value="CIVIL">CIVIL Department</option>
+                </select>
+
+                <button type="submit">Login</button>
+            </form>
+            <script>
+                (function(){
+                    const form = document.getElementById('login-form');
+                    form.addEventListener('submit', function(e){
+                        e.preventDefault();
+                        const username = document.getElementById('login-username').value.trim();
+                        const password = document.getElementById('login-password').value;
+                        const role = document.getElementById('login-role').value;
+                        if (!role) { alert('Please select a department'); return; }
+                        if (role === 'admin') {
+                            // Admin password required: exactly 'admin 123'
+                            if (password !== 'admin 123') {
+                                alert('Invalid admin password');
+                                return;
+                            }
+                            sessionStorage.setItem('role', 'admin');
+                            sessionStorage.setItem('username', username);
+                            window.location.href = 'admin.html';
+                            return;
+                        }
+                        // Non-admin login: accept any password, store role and username
+                        sessionStorage.setItem('role', role);
+                        sessionStorage.setItem('username', username);
+                        window.location.href = 'department.html';
+                    });
+                })();
+            </script>
+        </div>
+    </div>
+</body>
+</html>
